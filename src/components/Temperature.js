@@ -19,7 +19,6 @@ class Temperature extends React.Component{
     e.preventDefault();
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`);
     const response = await api_call.json()
-    console.log(response);
     if(city && country){
     this.setState({
       temperature: response.main.temp,

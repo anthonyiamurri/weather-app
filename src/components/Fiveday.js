@@ -5,7 +5,7 @@ import FivedayForecast from './FivedayForecast';
 
 const Api_Key = "eea46d93ed64ee3d01cbdc96313d81de";
 
-class Fiveday extends React.Component{
+class Fiveday extends React.Component {
   state = {
     forecast: [],
     error: undefined
@@ -31,27 +31,34 @@ class Fiveday extends React.Component{
       forecastList.push(forecastObject);
     }
 
-    if(city && country){
-    this.setState({
-      forecast: forecastList,
-      error: ""
-    })
-    }else{
+    if (city && country) {
+      this.setState({
+        forecast: forecastList,
+        error: ""
+      })
+    } else {
       this.setState({
         error: "Please input search values..."
       })
     }
   }
 
-   render(){
-    return(
-    <React.Fragment>
-    <Header />
-      <Form loadWeather={this.getForecast} />
-      <FivedayForecast
-        data={this.state.forecast}/>
-    </React.Fragment>
-   )
+  render() {
+    return ( <
+      React.Fragment >
+      <
+      Header / >
+      <
+      Form loadWeather = {
+        this.getForecast
+      }
+      /> <
+      FivedayForecast data = {
+        this.state.forecast
+      }
+      /> <
+      /React.Fragment>
+    )
   }
 }
 
